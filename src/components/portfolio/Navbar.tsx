@@ -44,7 +44,7 @@ export function Navbar() {
         className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 sm:px-8"
       >
         <a href="#home" className="font-mono text-sm font-semibold tracking-tight">
-          <span className="text-primary">&gt;</span> {profile.name.split(" ")[0].toLowerCase()}
+          <span className="text-primary">&gt;</span> {profile.name.split(" ")[0]?.toLowerCase()}
           <span className="text-muted-foreground">.dev</span>
         </a>
 
