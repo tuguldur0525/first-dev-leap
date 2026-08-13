@@ -14,14 +14,14 @@ export function Projects() {
         {projects.map((project, i) => (
           <Reveal key={project.name} delay={i * 0.08}>
             <article className="group grid overflow-hidden rounded-xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 lg:grid-cols-2">
-              <div className="overflow-hidden border-b border-border lg:border-b-0 lg:border-r">
+              <div className="relative aspect-[16/10] overflow-hidden border-b border-border lg:aspect-auto lg:h-full lg:min-h-[380px] lg:border-b-0 lg:border-r">
                 <img
                   src={project.image}
                   alt={`${project.name} interface preview`}
                   width={1200}
                   height={800}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />
               </div>
               <div className="p-6 sm:p-8">
