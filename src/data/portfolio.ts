@@ -89,12 +89,12 @@ const en: PortfolioContent = {
       "My background includes programming, web development, Adobe tools, Unreal Engine, Unity, OpenCV, image processing, and machine learning. I'm comfortable working independently or as part of a team, and I'm looking for my first full-time developer role where I can contribute, learn from experienced developers, and keep growing.",
       "While I don't have extensive professional experience yet, I'm eager to learn, gain real-world experience, and take on new challenges. I'm ready to work hard, learn from experienced developers, and continuously improve my skills as I grow into my first full-time developer role.",
     ],
-    highlights: [
-      "Recent Multimedia Technology graduate, currently seeking a full-time junior developer role",
-      "Built several university and personal projects using JavaScript and modern web technologies",
-      "Comfortable learning new tools, frameworks, and existing codebases",
-      "Approach technical problems by breaking them down into smaller, manageable tasks and solving them step by step",
-    ],
+  highlights: [
+  "Experience across programming, web development, graphic design, and multimedia production",
+  "Hands-on experience with Adobe tools, Figma, Unity, Unreal Engine, OpenCV, and 360° virtual tours",
+  "Able to combine technical and creative skills to build interactive and visual digital projects",
+  "Comfortable learning and working with different technologies depending on the needs of a project",
+],
   },
   skillGroups: [
     { title: "Languages", items: ["JavaScript", "TypeScript", "Python", "C", "C++"] },
@@ -146,11 +146,8 @@ const en: PortfolioContent = {
       image: campus360Img,
       tech: ["React", "Next.js", "Three.js", "Photo Sphere Viewer", "Tailwind CSS"],
       features: [
-        "Interactive 360° panoramic navigation",
-        "Multi-floor building navigation",
-        "Scene-to-scene transitions",
-        "Interactive navigation markers",
-        "Organized campus and room structure",
+        "Interactive 360° panoramic using Insta360",
+        "Three.js Photo Sphere Viewer integration",
         "Responsive interface for desktop and mobile",
         "Optimized 360° image assets for web performance",
       ],
@@ -162,7 +159,7 @@ const en: PortfolioContent = {
       description:
         "An automotive marketplace web application that allows users to browse, search and filter vehicle listings, submit their own listings, and manage listings through an administrative approval workflow.",
       image: autonationImg,
-      tech: ["Next.js", "React", "MongoDB", "REST API"],
+      tech: ["Next.js", "React", "MongoDB", "REST API", "Tailwind CSS", "TypeScript"],
       features: [
         "Dynamic vehicle listing and detail pages",
         "Search and filtering by vehicle attributes",
@@ -172,18 +169,17 @@ const en: PortfolioContent = {
         "Responsive interface",
       ],
       github: "https://github.com/your-username/autonation",
+      
     },
     {
       name: "Shield Nirun LLC Website",
       description:
         "A responsive corporate website developed for Shield Nirun LLC to present its company information and security services with a clear and professional online presence.",
       image: shieldImg,
-      tech: ["Next.js", "Tailwind CSS", "TypeScript", "Responsive Design"],
+      tech: ["Adobe Suite", "Next.js", "Tailwind CSS", "TypeScript", "Responsive Design"],
       features: [
         "Company information and service pages",
-        "Responsive design across devices",
-        "Contact and enquiry functionality",
-        "Structured content presentation",
+        "Graphic content and visual design using Adobe Suite",
       ],
       github: "https://github.com/tuguldur0525/shield-nirun-web",
       demo: "https://shield-nirun-web.vercel.app/",
@@ -279,9 +275,6 @@ const en: PortfolioContent = {
       achievements: [
         "Developed a responsive corporate website using Next.js, React, and Tailwind CSS.",
         "Built structured company and service pages with a focus on clear content presentation and usability.",
-        "Implemented responsive layouts for desktop, tablet, and mobile devices.",
-        "Integrated contact/enquiry functionality and organized website content for easy navigation.",
-        "Applied basic SEO and web performance practices to improve the site's accessibility and user experience.",
       ],
     },
     {
@@ -292,8 +285,6 @@ const en: PortfolioContent = {
         "Worked in a fast-paced customer-facing environment, building strong communication, teamwork, and time-management skills that transfer directly into collaborative development work.",
       achievements: [
         "Worked in a fast-paced customer-facing environment while maintaining consistent service standards.",
-        "Communicated effectively with coworkers and customers from different backgrounds.",
-        "Managed daily responsibilities independently and adapted to changing work situations.",
         "Strengthened teamwork, communication, time-management, and problem-solving skills.",
       ],
     },
@@ -325,16 +316,16 @@ const mn: PortfolioContent = {
   about: {
     paragraphs: [
       "Би Монгол Улсын Их Сургуулийг Мультимедиа технологийн чиглэлээр саяхан төгссөн. Суралцах хугацаандаа программчлал, алгоритм, өгөгдлийн сан болон вэб хөгжүүлэлтийн чиглэлээр суурь мэдлэг, практик туршлага хуримтлуулсан.",
-      "Программчлал болон вэб хөгжүүлэлтээс гадна Adobe-ийн хэрэгслүүд, Unreal Engine, Unity, OpenCV, компьютерийн хараа, зураг боловсруулалт болон машин сургалтын чиглэлээр ажиллаж үзсэн. Бие даан болон багаар ажиллахад дасан зохицож чаддаг бөгөөд туршлагатай хөгжүүлэгчидтэй хамтран ажиллаж, бодит төсөл дээр суралцан хөгжих боломжийг хайж байна.",
+      "Программчлал болон вэб хөгжүүлэлтээс гадна Adobe Suite, Unreal Engine, Unity, OpenCV, компьютерийн хараа, зураг боловсруулалт болон машин сургалтын чиглэлээр ажиллаж үзсэн. Бие даан болон багаар ажиллахад дасан зохицож чаддаг бөгөөд туршлагатай хөгжүүлэгчидтэй хамтран ажиллаж, бодит төсөл дээр суралцан хөгжих боломжийг хайж байна.",
       "Мэргэжлийн ажлын туршлагаа дөнгөж эхлүүлж байгаа ч шинэ зүйл хурдан суралцаж, мэдэхгүй зүйлээ судалж, асуудлыг шийдэх замаар өөрийгөө хөгжүүлэхийг хичээдэг. Анхны бүтэн цагийн ажлаараа бодит бүтээгдэхүүн дээр ажиллаж, багт өөрийн хувь нэмрээ оруулахын зэрэгцээ илүү туршлагатай хөгжүүлэгчдээс суралцах хүсэлтэй байна.",
     ],
 
     highlights: [
-      "Мультимедиа технологийн чиглэлээр 2026 онд төгссөн, программ хөгжүүлэгчийн бүтэн цагийн ажил хайж байгаа",
-      "JavaScript болон орчин үеийн вэб технологи ашиглан их сургуулийн болон хувийн хэд хэдэн төсөл хэрэгжүүлсэн",
-      "Шинэ технологи, framework болон өмнө нь бичигдсэн кодыг бие даан судалж, ажиллаж чаддаг",
-      "Техникийн асуудлыг жижиг хэсгүүдэд хувааж, алхам алхмаар шийдвэрлэхийг илүүд үздэг",
-    ],
+  "Программчлал, вэб хөгжүүлэлт, график дизайн болон мультимедиа чиглэлээр практик туршлагатай",
+  "Adobe Suite, Figma, Unity, Unreal Engine, OpenCV болон 360° виртуал аялалын технологиуд дээр ажиллаж байсан",
+  "Техникийн болон бүтээлч ур чадвараа хослуулан интерактив, харааны шийдэл бүхий дижитал төсөл боловсруулах чадвартай",
+  "Төслийн шаардлагаас хамааран өөр өөр технологи, хэрэгслийг хурдан сурч, ажиллах чадвартай",
+],
   },
 
   skillGroups: [
@@ -443,7 +434,7 @@ const mn: PortfolioContent = {
       description:
         "Хэрэглэгчид автомашины зар үзэх, хайх, шүүх, өөрийн машинаа зарлах боломжтой автомашины худалдааны вэб аппликейшн. Зар нэмэх болон админ баталгаажуулах үйл явцыг багтаасан.",
       image: autonationImg,
-      tech: ["Next.js", "React", "MongoDB", "REST API"],
+      tech: ["Next.js", "React", "MongoDB", "REST API", "Tailwind CSS", "TypeScript"],
       features: [
         "Автомашины зарын жагсаалт болон дэлгэрэнгүй хуудас",
         "Машины үзүүлэлтээр хайх болон шүүх",
@@ -453,6 +444,7 @@ const mn: PortfolioContent = {
         "Бүх төхөөрөмжид тохирсон интерфейс",
       ],
       github: "https://github.com/your-username/autonation",
+      
     },
 
     {

@@ -61,7 +61,7 @@ function Index() {
         <WorkExperience />
         <Skills />
         <Projects />
-        <Journey />
+        {/* <Journey /> */}
         <Capabilities />
         <GithubActivity />
         <Resume />
