@@ -3,6 +3,7 @@
  * Edit this file to update the site — no JSX changes needed.
  */
 import autonationImg from "@/assets/project-autonation.jpg";
+import campus360Img from "@/assets/project-campus360.jpg";
 import immerseImg from "@/assets/project-immerse.jpg";
 import shieldImg from "@/assets/project-shield.jpg";
 
