@@ -100,7 +100,7 @@ export const projects: Project[] = [
     name: "SITE Campus 360 Virtual Tour",
     description:
       "A web-based 360° virtual tour developed as a university diploma project for the School of Information Technology and Electronics, allowing users to explore campus buildings and indoor spaces interactively.",
-    image: immerseImg,
+    image: campus360Img,
     tech: ["React", "Next.js", "Three.js", "Photo Sphere Viewer", "Tailwind CSS"],
     features: [
       "Interactive 360° panoramic navigation",
