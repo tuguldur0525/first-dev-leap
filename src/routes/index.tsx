@@ -55,10 +55,11 @@ function Index() {
       <main>
         <Hero />
         <About />
+        <Education />
         <WorkExperience />
         <Skills />
         <Projects />
-        <Education />
+        <Journey />
         <Journey />
         <Capabilities />
         <GithubActivity />
