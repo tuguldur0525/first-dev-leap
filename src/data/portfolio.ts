@@ -234,9 +234,9 @@ export const navLinks = [
 
 export const experience = [
   {
-    role: "Web Developer",
+    role: "Graphic Designer & Web Developer",
     company: "Shield Nirun LLC",
-    period: "[Start Date] – [End Date / Present]",
+    period: "[2025/12] – [2026/03]",
     description:
       "Developed a responsive corporate website for a security services company, focusing on clear content presentation, usability, and multi-device compatibility.",
     achievements: [
@@ -248,9 +248,9 @@ export const experience = [
     ],
   },
   {
-    role: "[Your Role]",
+    role: "Photo grapher & Customer Service Representative",
     company: "Hollywood Pictures LLC",
-    period: "[Start Date] – [End Date]",
+    period: "[2025/05] – [2025/09]",
     description:
       "Worked in a fast-paced customer-facing environment, building strong communication, teamwork, and time-management skills that transfer directly into collaborative development work.",
     achievements: [
