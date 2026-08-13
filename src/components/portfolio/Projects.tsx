@@ -6,7 +6,7 @@ export function Projects() {
   return (
     <Section
       id="projects"
-      label="03 / Projects"
+      label="04 / Projects"
       title="Featured projects"
       intro="Applications I designed and built end to end — from interface to API and database."
     >

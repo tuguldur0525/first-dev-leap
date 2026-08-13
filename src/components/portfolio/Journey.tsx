@@ -5,7 +5,7 @@ export function Journey() {
   return (
     <Section
       id="journey"
-      label="05 / Journey"
+      label="06 / Journey"
       title="My journey"
       intro="University → projects → continuous learning → open to opportunities."
     >
