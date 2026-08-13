@@ -1,20 +1,23 @@
-import { motion } from "motion/react";
-import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
-import { profile, terminalLines } from "@/data/portfolio";
+import { motion } from 'motion/react';
+import { ArrowDown, Download, Github, Linkedin, Mail } from 'lucide-react';
+import { usePortfolioContent } from '@/hooks/usePortfolioContent';
 
 export function Hero() {
+  const { data, t } = usePortfolioContent();
+  const { profile, terminalLines } = data;
+
   return (
     <section id="home" className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
-      <div className="grid-lines pointer-events-none absolute inset-0 opacity-40 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
+      <div className="grid-lines pointer-events-none absolute inset-0 opacity-40 mask-[radial-gradient(ellipse_at_top,black,transparent_70%)]" />
       <div className="relative mx-auto grid w-full max-w-6xl gap-14 px-5 sm:px-8 lg:grid-cols-[1.1fr_1fr] lg:items-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="mono-label">Available for junior roles</p>
+          <p className="mono-label">{t['availableForRoles'] ?? ''}</p>
           <h1 className="mt-4 text-4xl font-semibold leading-[1.08] sm:text-5xl lg:text-6xl">
-            Hi, I&apos;m {profile.name}
+            {t['greetingPrefix'] ?? ''} {profile.name}
           </h1>
           <p className="mt-3 font-mono text-base text-primary sm:text-lg">{profile.role}</p>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
@@ -26,20 +29,20 @@ export function Hero() {
               href="#projects"
               className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-transform hover:-translate-y-0.5"
             >
-              View My Projects
+              {t['viewProjects'] ?? ''}
             </a>
             <a
               href={profile.resumeUrl}
               download
               className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-5 py-2.5 text-sm font-medium transition-colors hover:border-primary/60 hover:text-primary"
             >
-              <Download className="h-4 w-4" /> Download Resume
+              <Download className="h-4 w-4" /> {t['downloadResume'] ?? ''}
             </a>
             <a
               href="#contact"
               className="inline-flex items-center gap-2 rounded-md border border-transparent px-5 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
-              <Mail className="h-4 w-4" /> Contact Me
+              <Mail className="h-4 w-4" /> {t['contactMe'] ?? ''}
             </a>
           </div>
 
@@ -48,7 +51,7 @@ export function Hero() {
               href={profile.github}
               target="_blank"
               rel="noreferrer noopener"
-              aria-label="GitHub profile"
+              aria-label={t['githubProfileAria'] ?? ''}
               className="text-muted-foreground transition-colors hover:text-primary"
             >
               <Github className="h-5 w-5" />
@@ -57,7 +60,7 @@ export function Hero() {
               href={profile.linkedin}
               target="_blank"
               rel="noreferrer noopener"
-              aria-label="LinkedIn profile"
+              aria-label={t['linkedinProfileAria'] ?? ''}
               className="text-muted-foreground transition-colors hover:text-primary"
             >
               <Linkedin className="h-5 w-5" />
@@ -103,7 +106,7 @@ export function Hero() {
           href="#about"
           className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary"
         >
-          <ArrowDown className="h-3.5 w-3.5" /> scroll
+          <ArrowDown className="h-3.5 w-3.5" /> {t['scroll'] ?? ''}
         </a>
       </div>
     </section>

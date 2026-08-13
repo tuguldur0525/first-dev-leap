@@ -1,11 +1,32 @@
 import { Github, Linkedin, Mail, Send, Phone } from 'lucide-react';
 import { useState, type FormEvent } from 'react';
-import { profile } from '@/data/portfolio';
 import { Reveal, Section } from './Section';
+import { usePortfolioContent } from '@/hooks/usePortfolioContent';
 
-type Errors = { name?: string, email?: string, message?: string };
+type Errors = {
+  name?: string | undefined,
+  email?: string | undefined,
+  message?: string | undefined,
+};
 
 export function Contact() {
+  const { data, t } = usePortfolioContent();
+  const { profile } = data;
+  const ui = t as unknown as Record<string, string>;
+  const contactLabel = ui['contactLabel'] ?? '';
+  const contactTitle = ui['contactTitle'] ?? '';
+  const contactIntro = ui['contactIntro'] ?? '';
+  const linkedinLabel = ui['linkedin'] ?? '';
+  const githubLabel = ui['github'] ?? '';
+  const formNameLabel = ui['formName'] ?? '';
+  const formEmailLabel = ui['formEmail'] ?? '';
+  const formMessageLabel = ui['formMessage'] ?? '';
+  const formCopyLabel = ui['formCopy'] ?? '';
+  const formSentNotice = ui['formSentNotice'] ?? '';
+  const formCopiedNotice = ui['formCopiedNotice'] ?? '';
+  const errNameRequiredMsg = ui['errNameRequired'] ?? '';
+  const errEmailInvalidMsg = ui['errEmailInvalid'] ?? '';
+  const errMessageShortMsg = ui['errMessageShort'] ?? '';
   const [values, setValues] = useState({ name: '', email: '', message: '' });
   const [errors, setErrors] = useState<Errors>({});
   const [sent, setSent] = useState(false);
@@ -13,10 +34,9 @@ export function Contact() {
 
   const validate = () => {
     const next: Errors = {};
-    if (!values.name.trim()) next.name = 'Please enter your name.';
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) next.email = 'Enter a valid email.';
-    if (values.message.trim().length < 10)
-      next.message = 'Message should be at least 10 characters.';
+    if (!values.name.trim()) next.name = errNameRequiredMsg;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) next.email = errEmailInvalidMsg;
+    if (values.message.trim().length < 10) next.message = errMessageShortMsg;
     return next;
   };
 
@@ -53,12 +73,7 @@ export function Contact() {
     'mt-1.5 w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm outline-none transition-colors focus:border-primary';
 
   return (
-    <Section
-      id="contact"
-      label="09 / Contact"
-      title="Let's build something together"
-      intro="I'm currently looking for junior developer opportunities, internships and projects where I can contribute, learn and grow."
-    >
+    <Section id="contact" label={contactLabel} title={contactTitle} intro={contactIntro}>
       <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr]">
         <Reveal>
           <ul className="space-y-4">
@@ -85,7 +100,7 @@ export function Contact() {
                 rel="noreferrer noopener"
                 className="flex items-center gap-3 rounded-lg border border-border bg-card p-4 text-sm transition-colors hover:border-primary/50"
               >
-                <Linkedin className="h-4 w-4 text-primary" /> LinkedIn
+                <Linkedin className="h-4 w-4 text-primary" /> {linkedinLabel}
               </a>
             </li>
             <li>
@@ -95,7 +110,7 @@ export function Contact() {
                 rel="noreferrer noopener"
                 className="flex items-center gap-3 rounded-lg border border-border bg-card p-4 text-sm transition-colors hover:border-primary/50"
               >
-                <Github className="h-4 w-4 text-primary" /> GitHub
+                <Github className="h-4 w-4 text-primary" /> {githubLabel}
               </a>
             </li>
           </ul>
@@ -110,7 +125,7 @@ export function Contact() {
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
                 <label htmlFor="name" className="text-sm font-medium">
-                  Name
+                  {formNameLabel}
                 </label>
                 <input
                   id="name"
@@ -129,7 +144,7 @@ export function Contact() {
               </div>
               <div>
                 <label htmlFor="email" className="text-sm font-medium">
-                  Email
+                  {formEmailLabel}
                 </label>
                 <input
                   id="email"
@@ -150,7 +165,7 @@ export function Contact() {
             </div>
             <div className="mt-5">
               <label htmlFor="message" className="text-sm font-medium">
-                Message
+                {formMessageLabel}
               </label>
               <textarea
                 id="message"
@@ -182,13 +197,13 @@ export function Contact() {
                 onClick={onCopy}
                 className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-4 py-2 text-sm transition-colors hover:border-primary/50"
               >
-                Copy Message
+                {formCopyLabel}
               </button>
             </div>
 
             <p aria-live="polite" className="mt-3 text-xs text-muted-foreground">
-              {sent ? 'Your email client should now be open with the message ready to send.' : ''}
-              {copySuccess ? ' Message copied to clipboard.' : ''}
+              {sent ? formSentNotice : ''}
+              {copySuccess ? formCopiedNotice : ''}
             </p>
           </form>
         </Reveal>

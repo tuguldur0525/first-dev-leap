@@ -1,20 +1,23 @@
-import { ExternalLink, Github } from "lucide-react";
-import { projects } from "@/data/portfolio";
-import { Reveal, Section } from "./Section";
+import { ExternalLink, Github } from 'lucide-react';
+import { usePortfolioContent } from '@/hooks/usePortfolioContent';
+import { Reveal, Section } from './Section';
 
 export function Projects() {
+  const { data, t } = usePortfolioContent();
+  const { projects } = data;
+
   return (
     <Section
       id="projects"
-      label="05 / Projects"
-      title="Featured projects"
-      intro="Applications I designed and built end to end — from interface to API and database."
+      label={t['projectsLabel'] ?? ''}
+      title={t['projectsTitle'] ?? ''}
+      intro={t['projectsIntro'] ?? ''}
     >
       <div className="grid gap-8">
         {projects.map((project, i) => (
           <Reveal key={project.name} delay={i * 0.08}>
             <article className="group grid overflow-hidden rounded-xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 lg:grid-cols-2">
-              <div className="relative aspect-[16/10] overflow-hidden border-b border-border lg:aspect-auto lg:h-full lg:min-h-[380px] lg:border-b-0 lg:border-r">
+              <div className="relative aspect-16/10 overflow-hidden border-b border-border lg:aspect-auto lg:h-full lg:min-h-95 lg:border-b-0 lg:border-r">
                 <img
                   src={project.image}
                   alt={`${project.name} interface preview`}
@@ -31,18 +34,18 @@ export function Projects() {
                 </p>
 
                 <ul className="mt-5 flex flex-wrap gap-2">
-                  {project.tech.map((t) => (
+                  {project.tech.map((tItem) => (
                     <li
-                      key={t}
+                      key={tItem}
                       className="rounded-md border border-border px-2.5 py-1 font-mono text-[11px] text-muted-foreground"
                     >
-                      {t}
+                      {tItem}
                     </li>
                   ))}
                 </ul>
 
                 <h4 className="mt-6 font-mono text-xs uppercase tracking-[0.14em] text-primary">
-                  Key features
+                  {t['keyFeatures'] ?? ''}
                 </h4>
                 <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
                   {project.features.map((f) => (
@@ -61,7 +64,7 @@ export function Projects() {
                       rel="noreferrer noopener"
                       className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-2 text-sm transition-colors hover:border-primary/60 hover:text-primary"
                     >
-                      <Github className="h-4 w-4" /> GitHub
+                      <Github className="h-4 w-4" /> {t['github'] ?? ''}
                     </a>
                   ) : null}
                   {project.demo ? (
@@ -71,7 +74,7 @@ export function Projects() {
                       rel="noreferrer noopener"
                       className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-transform hover:-translate-y-0.5"
                     >
-                      <ExternalLink className="h-4 w-4" /> Live Demo
+                      <ExternalLink className="h-4 w-4" /> {t['liveDemo'] ?? ''}
                     </a>
                   ) : null}
                 </div>

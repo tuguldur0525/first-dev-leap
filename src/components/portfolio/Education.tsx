@@ -1,9 +1,12 @@
-import { education } from "@/data/portfolio";
-import { Reveal, Section } from "./Section";
+import { usePortfolioContent } from '@/hooks/usePortfolioContent';
+import { Reveal, Section } from './Section';
 
 export function Education() {
+  const { data, t } = usePortfolioContent();
+  const { education } = data;
+
   return (
-    <Section id="education" label="02 / Education" title="Education">
+    <Section id="education" label={t['educationLabel'] ?? ''} title={t['educationTitle'] ?? ''}>
       <div className="space-y-8">
         {education.map((item, i) => (
           <Reveal key={item.degree} delay={i * 0.08}>

@@ -1,11 +1,14 @@
-import { Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
-import { navLinks, profile } from "@/data/portfolio";
-import { ThemeToggle } from "./ThemeToggle";
+import { Menu, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { usePortfolioContent } from '@/hooks/usePortfolioContent';
+import { ThemeToggle } from './ThemeToggle';
+import { LanguageToggle } from './LanguageToggle';
 
 export function Navbar() {
+  const { data, t } = usePortfolioContent();
+  const { navLinks, profile } = data;
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState("#home");
+  const [active, setActive] = useState('#home');
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -20,23 +23,23 @@ export function Navbar() {
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
         if (visible) setActive(`#${visible.target.id}`);
       },
-      { rootMargin: "-45% 0px -50% 0px", threshold: [0, 0.25, 0.5] },
+      { rootMargin: '-45% 0px -50% 0px', threshold: [0, 0.25, 0.5] },
     );
     sections.forEach((s) => observer.observe(s));
 
     const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => {
       observer.disconnect();
-      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener('scroll', onScroll);
     };
-  }, []);
+  }, [navLinks]);
 
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled ? "border-b border-border bg-background/85 backdrop-blur-md" : "bg-transparent"
+        scrolled ? 'border-b border-border bg-background/85 backdrop-blur-md' : 'bg-transparent'
       }`}
     >
       <nav
@@ -44,7 +47,7 @@ export function Navbar() {
         className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 sm:px-8"
       >
         <a href="#home" className="font-mono text-sm font-semibold tracking-tight">
-          <span className="text-primary">&gt;</span> {profile.name.split(" ")[0]?.toLowerCase()}
+          <span className="text-primary">&gt;</span> {profile.name.split(' ')[0]?.toLowerCase()}
           <span className="text-muted-foreground">.dev</span>
         </a>
 
@@ -53,11 +56,11 @@ export function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                aria-current={active === link.href ? "true" : undefined}
+                aria-current={active === link.href ? 'true' : undefined}
                 className={`rounded-md px-3 py-2 text-sm transition-colors ${
                   active === link.href
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? 'text-primary'
+                    : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
                 {link.label}
@@ -67,11 +70,12 @@ export function Navbar() {
         </ul>
 
         <div className="flex items-center gap-2">
+          <LanguageToggle />
           <ThemeToggle />
           <button
             type="button"
             className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-card text-muted-foreground md:hidden"
-            aria-label={open ? "Close menu" : "Open menu"}
+            aria-label={open ? (t['closeMenu'] ?? '') : (t['openMenu'] ?? '')}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
           >

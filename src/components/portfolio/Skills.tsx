@@ -1,13 +1,16 @@
-import { skillGroups } from "@/data/portfolio";
-import { Reveal, Section } from "./Section";
+import { usePortfolioContent } from '@/hooks/usePortfolioContent';
+import { Reveal, Section } from './Section';
 
 export function Skills() {
+  const { data, t } = usePortfolioContent();
+  const { skillGroups } = data;
+
   return (
     <Section
       id="skills"
-      label="04 / Skills"
-      title="Technologies I work with"
-      intro="Tools I've used across university coursework, personal builds and client-style projects."
+      label={t['skillsLabel'] ?? ''}
+      title={t['skillsTitle'] ?? ''}
+      intro={t['skillsIntro'] ?? ''}
     >
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {skillGroups.map((group, i) => (

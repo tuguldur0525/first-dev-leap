@@ -1,11 +1,14 @@
-import { Check } from "lucide-react";
-import profileImg from "@/assets/profile.jpg";
-import { about, profile } from "@/data/portfolio";
-import { Reveal, Section } from "./Section";
+import { Check } from 'lucide-react';
+import profileImg from '@/assets/profile.jpg';
+import { Reveal, Section } from './Section';
+import { usePortfolioContent } from '@/hooks/usePortfolioContent';
 
 export function About() {
+  const { data, t } = usePortfolioContent();
+  const { about, profile } = data;
+
   return (
-    <Section id="about" label="01 / About" title="A junior developer who likes shipping">
+    <Section id="about" label={t['aboutLabel'] ?? ''} title={t['aboutTitle'] ?? ''}>
       <div className="grid gap-12 lg:grid-cols-[320px_1fr] lg:gap-16">
         <Reveal>
           <div className="relative">
@@ -16,7 +19,7 @@ export function About() {
               width={768}
               height={960}
               loading="lazy"
-              className="aspect-[4/5] w-full rounded-lg object-cover"
+              className="aspect-4/5 w-full rounded-lg object-cover"
             />
             <p className="mt-3 font-mono text-xs text-muted-foreground">
               [Tuguldur Turmunkh, 2025]

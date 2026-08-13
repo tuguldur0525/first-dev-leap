@@ -1,13 +1,20 @@
-import { GraduationCap, Layers, Layout, Puzzle } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
-import { capabilities } from "@/data/portfolio";
-import { Reveal, Section } from "./Section";
+import { GraduationCap, Layers, Layout, Puzzle } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+import { usePortfolioContent } from '@/hooks/usePortfolioContent';
+import { Reveal, Section } from './Section';
 
 const icons: Record<string, LucideIcon> = { Layout, Layers, Puzzle, GraduationCap };
 
 export function Capabilities() {
+  const { data, t } = usePortfolioContent();
+  const { capabilities } = data;
+
   return (
-    <Section id="capabilities" label="06 / Contribution" title="What I can do">
+    <Section
+      id="capabilities"
+      label={t['capabilitiesLabel'] ?? ''}
+      title={t['capabilitiesTitle'] ?? ''}
+    >
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {capabilities.map((cap, i) => {
           const Icon = icons[cap.icon] ?? Layout;

@@ -1,14 +1,17 @@
-import { Github, Star } from "lucide-react";
-import { profile, projects } from "@/data/portfolio";
-import { Reveal, Section } from "./Section";
+import { Github, Star } from 'lucide-react';
+import { usePortfolioContent } from '@/hooks/usePortfolioContent';
+import { Reveal, Section } from './Section';
 
 export function GithubActivity() {
+  const { data, t } = usePortfolioContent();
+  const { profile, projects } = data;
+
   return (
     <Section
       id="github"
-      label="07 / Code"
-      title="See what I'm building"
-      intro="Most of my work lives on GitHub — university projects, personal experiments and the applications featured above."
+      label={t['githubActivityLabel'] ?? ''}
+      title={t['githubActivityTitle'] ?? ''}
+      intro={t['githubActivityIntro'] ?? ''}
     >
       <div className="grid gap-5 lg:grid-cols-[1fr_1.2fr]">
         <Reveal>
@@ -16,9 +19,9 @@ export function GithubActivity() {
             <Github className="h-6 w-6 text-primary" />
             <h3 className="mt-4 text-lg font-semibold">@{profile.githubUsername}</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Repositories, commit history and works in progress. Update{" "}
-              <code className="font-mono text-xs text-primary">githubUsername</code> in the data
-              file to point this at your account.
+              {t['githubBlurbPrefix'] ?? ''}{' '}
+              <code className="font-mono text-xs text-primary">githubUsername</code>{' '}
+              {t['githubBlurbSuffix'] ?? ''}
             </p>
             <a
               href={profile.github}
@@ -26,7 +29,7 @@ export function GithubActivity() {
               rel="noreferrer noopener"
               className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-transform hover:-translate-y-0.5"
             >
-              <Github className="h-4 w-4" /> View GitHub Profile
+              <Github className="h-4 w-4" /> {t['viewGithubProfile'] ?? ''}
             </a>
             <img
               src={`https://ghchart.rshah.org/${profile.githubUsername}`}
@@ -56,7 +59,7 @@ export function GithubActivity() {
                     rel="noreferrer noopener"
                     className="mt-4 inline-block font-mono text-xs text-primary hover:underline"
                   >
-                    view repository →
+                    {t['viewRepository'] ?? ''}
                   </a>
                 ) : null}
               </li>

@@ -12,7 +12,9 @@ import { GithubActivity } from '@/components/portfolio/GithubActivity';
 import { Resume } from '@/components/portfolio/Resume';
 import { Contact } from '@/components/portfolio/Contact';
 import { Footer } from '@/components/portfolio/Footer';
-import { profile } from '@/data/portfolio';
+import { content } from '@/data/portfolio';
+
+const profile = content.en.profile;
 
 const title = `${profile.name} — Junior Software Developer`;
 const description =

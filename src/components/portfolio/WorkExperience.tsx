@@ -1,14 +1,17 @@
-import { Briefcase } from "lucide-react";
-import { experience } from "@/data/portfolio";
-import { Reveal, Section } from "./Section";
+import { Briefcase } from 'lucide-react';
+import { usePortfolioContent } from '@/hooks/usePortfolioContent';
+import { Reveal, Section } from './Section';
 
 export function WorkExperience() {
+  const { data, t } = usePortfolioContent();
+  const { experience } = data;
+
   return (
     <Section
       id="experience"
-      label="03 / Experience"
-      title="Work experience"
-      intro="My professional background — from web development to customer-facing roles that shaped my collaboration and communication skills."
+      label={t['experienceLabel'] ?? ''}
+      title={t['experienceTitle'] ?? ''}
+      intro={t['experienceIntro'] ?? ''}
     >
       <div className="space-y-8">
         {experience.map((job, i) => (
@@ -31,7 +34,10 @@ export function WorkExperience() {
                   </p>
                   <ul className="mt-5 space-y-2">
                     {job.achievements.map((item) => (
-                      <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
+                      <li
+                        key={item}
+                        className="flex items-start gap-3 text-sm text-muted-foreground"
+                      >
                         <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                         <span>{item}</span>
                       </li>
