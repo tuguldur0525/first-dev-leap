@@ -224,8 +224,39 @@ export const capabilities = [
 export const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
+];
+
+export const experience = [
+  {
+    role: "Web Developer",
+    company: "Shield Nirun LLC",
+    period: "[Start Date] – [End Date / Present]",
+    description:
+      "Developed a responsive corporate website for a security services company, focusing on clear content presentation, usability, and multi-device compatibility.",
+    achievements: [
+      "Developed a responsive corporate website using Next.js, React, and Tailwind CSS.",
+      "Built structured company and service pages with a focus on clear content presentation and usability.",
+      "Implemented responsive layouts for desktop, tablet, and mobile devices.",
+      "Integrated contact/enquiry functionality and organized website content for easy navigation.",
+      "Applied basic SEO and web performance practices to improve the site's accessibility and user experience.",
+    ],
+  },
+  {
+    role: "[Your Role]",
+    company: "Hollywood Pictures LLC",
+    period: "[Start Date] – [End Date]",
+    description:
+      "Worked in a fast-paced customer-facing environment, building strong communication, teamwork, and time-management skills that transfer directly into collaborative development work.",
+    achievements: [
+      "Worked in a fast-paced customer-facing environment while maintaining consistent service standards.",
+      "Communicated effectively with coworkers and customers from different backgrounds.",
+      "Managed daily responsibilities independently and adapted to changing work situations.",
+      "Strengthened teamwork, communication, time-management, and problem-solving skills.",
+    ],
+  },
 ];
