@@ -5,7 +5,7 @@ export function Skills() {
   return (
     <Section
       id="skills"
-      label="03 / Skills"
+      label="04 / Skills"
       title="Technologies I work with"
       intro="Tools I've used across university coursework, personal builds and client-style projects."
     >

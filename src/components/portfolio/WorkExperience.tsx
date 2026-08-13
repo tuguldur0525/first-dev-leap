@@ -6,7 +6,7 @@ export function WorkExperience() {
   return (
     <Section
       id="experience"
-      label="02 / Experience"
+      label="03 / Experience"
       title="Work experience"
       intro="My professional background — from web development to customer-facing roles that shaped my collaboration and communication skills."
     >
