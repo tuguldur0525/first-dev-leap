@@ -1,20 +1,22 @@
-import { Github, Linkedin, Mail, Send } from "lucide-react";
-import { useState, type FormEvent } from "react";
-import { profile } from "@/data/portfolio";
-import { Reveal, Section } from "./Section";
+import { Github, Linkedin, Mail, Send, Phone } from 'lucide-react';
+import { useState, type FormEvent } from 'react';
+import { profile } from '@/data/portfolio';
+import { Reveal, Section } from './Section';
 
-type Errors = { name?: string; email?: string; message?: string };
+type Errors = { name?: string, email?: string, message?: string };
 
 export function Contact() {
-  const [values, setValues] = useState({ name: "", email: "", message: "" });
+  const [values, setValues] = useState({ name: '', email: '', message: '' });
   const [errors, setErrors] = useState<Errors>({});
   const [sent, setSent] = useState(false);
+  const [copySuccess, setCopySuccess] = useState(false);
 
   const validate = () => {
     const next: Errors = {};
-    if (!values.name.trim()) next.name = "Please enter your name.";
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) next.email = "Enter a valid email.";
-    if (values.message.trim().length < 10) next.message = "Message should be at least 10 characters.";
+    if (!values.name.trim()) next.name = 'Please enter your name.';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) next.email = 'Enter a valid email.';
+    if (values.message.trim().length < 10)
+      next.message = 'Message should be at least 10 characters.';
     return next;
   };
 
@@ -23,14 +25,32 @@ export function Contact() {
     const next = validate();
     setErrors(next);
     if (Object.keys(next).length > 0) return;
-    const subject = encodeURIComponent(`Portfolio enquiry from ${values.name}`);
-    const body = encodeURIComponent(`${values.message}\n\n— ${values.name} (${values.email})`);
-    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
+    const subject = `Portfolio enquiry from ${values.name}`;
+    const body = `${values.message}\n\n— ${values.name} (${values.email})`;
+    const mailto = `mailto:${profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+      body,
+    )}`;
+    window.location.href = mailto;
     setSent(true);
   };
 
+  const onCopy = async () => {
+    const next = validate();
+    setErrors(next);
+    if (Object.keys(next).length > 0) return;
+    const subject = `Portfolio enquiry from ${values.name}`;
+    const body = `${values.message}\n\n— ${values.name} (${values.email})`;
+    try {
+      await navigator.clipboard.writeText(`Subject: ${subject}\n\n${body}`);
+      setCopySuccess(true);
+      setTimeout(() => setCopySuccess(false), 3000);
+    } catch {
+      // ignore clipboard failures silently
+    }
+  };
+
   const field =
-    "mt-1.5 w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm outline-none transition-colors focus:border-primary";
+    'mt-1.5 w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm outline-none transition-colors focus:border-primary';
 
   return (
     <Section
@@ -48,6 +68,14 @@ export function Contact() {
                 className="flex items-center gap-3 rounded-lg border border-border bg-card p-4 text-sm transition-colors hover:border-primary/50"
               >
                 <Mail className="h-4 w-4 text-primary" /> {profile.email}
+              </a>
+            </li>
+            <li>
+              <a
+                href={`tel:${profile.phone.replace(/\s+/g, '')}`}
+                className="flex items-center gap-3 rounded-lg border border-border bg-card p-4 text-sm transition-colors hover:border-primary/50"
+              >
+                <Phone className="h-4 w-4 text-primary" /> {profile.phone}
               </a>
             </li>
             <li>
@@ -74,7 +102,11 @@ export function Contact() {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <form onSubmit={onSubmit} noValidate className="rounded-xl border border-border bg-card p-6 sm:p-8">
+          <form
+            onSubmit={onSubmit}
+            noValidate
+            className="rounded-xl border border-border bg-card p-6 sm:p-8"
+          >
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
                 <label htmlFor="name" className="text-sm font-medium">
@@ -86,7 +118,7 @@ export function Contact() {
                   className={field}
                   value={values.name}
                   aria-invalid={Boolean(errors.name)}
-                  aria-describedby={errors.name ? "name-error" : undefined}
+                  aria-describedby={errors.name ? 'name-error' : undefined}
                   onChange={(e) => setValues((v) => ({ ...v, name: e.target.value }))}
                 />
                 {errors.name ? (
@@ -106,7 +138,7 @@ export function Contact() {
                   className={field}
                   value={values.email}
                   aria-invalid={Boolean(errors.email)}
-                  aria-describedby={errors.email ? "email-error" : undefined}
+                  aria-describedby={errors.email ? 'email-error' : undefined}
                   onChange={(e) => setValues((v) => ({ ...v, email: e.target.value }))}
                 />
                 {errors.email ? (
@@ -127,7 +159,7 @@ export function Contact() {
                 className={field}
                 value={values.message}
                 aria-invalid={Boolean(errors.message)}
-                aria-describedby={errors.message ? "message-error" : undefined}
+                aria-describedby={errors.message ? 'message-error' : undefined}
                 onChange={(e) => setValues((v) => ({ ...v, message: e.target.value }))}
               />
               {errors.message ? (
@@ -137,14 +169,26 @@ export function Contact() {
               ) : null}
             </div>
 
-            <button
-              type="submit"
-              className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-transform hover:-translate-y-0.5"
-            >
-              <Send className="h-4 w-4" /> Send Message
-            </button>
+            <div className="mt-6 flex items-center gap-3">
+              <button
+                type="submit"
+                className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-transform hover:-translate-y-0.5 disabled:opacity-60"
+              >
+                <Send className="h-4 w-4" /> Open Mail Client
+              </button>
+
+              <button
+                type="button"
+                onClick={onCopy}
+                className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-4 py-2 text-sm transition-colors hover:border-primary/50"
+              >
+                Copy Message
+              </button>
+            </div>
+
             <p aria-live="polite" className="mt-3 text-xs text-muted-foreground">
-              {sent ? "Your email client should now be open with the message ready to send." : ""}
+              {sent ? 'Your email client should now be open with the message ready to send.' : ''}
+              {copySuccess ? ' Message copied to clipboard.' : ''}
             </p>
           </form>
         </Reveal>

@@ -9,11 +9,12 @@ import shieldImg from "@/assets/project-shield.jpg";
 export const profile = {
   name: "Tuguldur Turmunkh",
   role: "Junior Software Developer",
-  location: "Ulaanbaatar, Mongolia",
-  email: "tuguldur@example.com", // [YOUR EMAIL]
-  github: "https://github.com/your-username", // [YOUR GITHUB]
-  githubUsername: "your-username", // [YOUR GITHUB USERNAME]
-  linkedin: "https://linkedin.com/in/your-profile", // [YOUR LINKEDIN]
+  location: "Sukhbaatar District, Ulaanbaatar, Mongolia",
+  email: "tuguldur.turmunkhmb@gmail.com", // [YOUR EMAIL]
+  github: "https://github.com/tuguldur0525", // [YOUR GITHUB]
+  githubUsername: "tuguldur0525", // [YOUR GITHUB USERNAME]
+  linkedin: "https://linkedin.com/in/tuguldur-turmunkh", // [YOUR LINKEDIN]
+  phone: "+976 80758785", // [YOUR PHONE]
   resumeUrl: "/resume.pdf",
   tagline:
     "I'm a recent Multimedia Technology graduate from the National University of Mongolia, passionate about building useful, reliable and user-friendly software.",
@@ -32,14 +33,14 @@ export const terminalLines = [
 export const about = {
   paragraphs: [
     "I recently graduated from the National University of Mongolia with a degree in Multimedia Technology, where I built a strong foundation in programming, algorithms and web development.",
-    "Most of what I know comes from building: university coursework, personal side projects and real client-style websites. I like understanding how a product works end to end — from the interface a user touches to the API and database behind it.",
-    "I'm comfortable working independently and just as happy inside a team: reviewing code, asking questions and shipping small improvements consistently. I'm looking for my first full-time developer role where I can contribute, learn from experienced engineers and grow into a dependable professional.",
+    "My background includes programming, web development, Adobe tools, Unreal Engine, Unity, OpenCV, image processing, and machine learning. I’m comfortable working independently or as part of a team, and I’m looking for my first full-time developer role where I can contribute, learn from experienced developers, and keep growing.",
+    "While I don’t have extensive professional experience yet, I’m eager to learn, gain real-world experience, and take on new challenges. I’m ready to work hard, learn from experienced developers, and continuously improve my skills as I grow into my first full-time developer role.",
   ],
   highlights: [
-    "Recent university graduate, open to full-time junior roles",
-    "Hands-on experience with full-stack JavaScript projects",
-    "Strong willingness to learn new tools and codebases",
-    "Enjoys breaking technical problems into small, testable steps",
+    "Recent Multimedia Technology graduate, currently seeking a full-time junior developer role",
+    "Built several university and personal projects using JavaScript and modern web technologies",
+    "Comfortable learning new tools, frameworks, and existing codebases",
+    "Approach technical problems by breaking them down into smaller, manageable tasks and solving them step by step",
   ],
 };
 
@@ -47,13 +48,21 @@ export const skillGroups = [
   { title: "Languages", items: ["JavaScript", "TypeScript", "Python", "C", "C++"] },
   {
     title: "Frontend",
-    items: ["React", "Next.js", "HTML", "Tailwind CSS", "Responsive Design"],
+    items: ["React", "Next.js", "HTML", "Tailwind CSS", "Responsive Design", "Framer Motion"],
   },
   {
     title: "Backend & Database",
-    items: ["Node.js", "REST APIs", "MongoDB", "SQL", "Supabase"],
+    items: ["Node.js", "REST APIs", "MongoDB", "SQL", "Supabase", "Auth & JWT"],
   },
-  { title: "Tools", items: ["Git", "GitHub", "VS Code", "Figma", "Docker"] },
+  { title: "Tools", items: ["Git", "GitHub", "VS Code", "Figma", "Docker", "Adobe Suite"] },
+  {
+    title: "Interactive & Multimedia",
+    items: ["360 Virtual Tours", "Three.js", "OpenCV", "Computer Vision", "Unreal Engine", "Unity"],
+  },
+  {
+    title: "Other",
+    items: ["Mapbox", "WebGL", "SEO & Performance Optimization"],
+  },
 ];
 
 export type Project = {
@@ -68,45 +77,73 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: "Immerse Mongolia",
+    description:
+      "A Full-stacked web platform concept for discovering and showcasing Mongolian businesses and destinations through interactive listings, maps, reviews, and immersive 360° experiences..",
+    image: immerseImg,
+    tech: ["Next.js", "TypeScript", "Node.js", "Tailwind CSS", "Supabase", "REST API", "Mapbox"],
+    features: [
+      "Business and destination listings",
+      "Interactive maps and location-based browsing",
+      "360° virtual tour integration",
+      "Reviews and ratings",
+      "Category-based discovery",
+      "Bilingual interface (Mongolian / English)",
+      "Responsive mobile-friendly design",
+    ],
+    github: "https://github.com/tuguldur0525/immersemongolia",
+    demo: "https://immersemongolia.vercel.app/",
+  },
+
+  {
+    name: "SITE Campus 360 Virtual Tour",
+    description:
+      "A web-based 360° virtual tour developed as a university diploma project for the School of Information Technology and Electronics, allowing users to explore campus buildings and indoor spaces interactively.",
+    image: immerseImg,
+    tech: ["React", "Next.js", "Three.js", "Photo Sphere Viewer", "Tailwind CSS"],
+    features: [
+      "Interactive 360° panoramic navigation",
+      "Multi-floor building navigation",
+      "Scene-to-scene transitions",
+      "Interactive navigation markers",
+      "Organized campus and room structure",
+      "Responsive interface for desktop and mobile",
+      "Optimized 360° image assets for web performance",
+    ],
+    github: "https://github.com/tuguldur0525/mtes-tour",
+    demo: "https://mtes-tour.vercel.app/",
+  },
+
+  {
     name: "AutoNation.mn",
     description:
-      "A full-stack car marketplace where users can browse, filter and post vehicle listings, with an admin approval flow before listings go live.",
+      "An automotive marketplace web application that allows users to browse, search and filter vehicle listings, submit their own listings, and manage listings through an administrative approval workflow.",
     image: autonationImg,
     tech: ["Next.js", "React", "MongoDB", "REST API"],
     features: [
-      "Car listings with dynamic detail pages",
-      "Search, filtering and location filtering",
+      "Dynamic vehicle listing and detail pages",
+      "Search and filtering by vehicle attributes",
+      "Location-based filtering",
       "User accounts and listing submission",
-      "Admin approval system",
+      "Admin listing approval workflow",
+      "Responsive interface",
     ],
-    github: "https://github.com/your-username/autonation", // [PROJECT REPO]
-    demo: "https://autonation.mn", // [LIVE DEMO]
-  },
-  {
-    name: "Immerse Mongolia",
-    description:
-      "[PROJECT DESCRIPTION] A platform concept for showcasing Mongolian travel and cultural experiences with rich media and curated itineraries.",
-    image: immerseImg,
-    tech: ["React", "Node.js", "REST API"], // [TECHNOLOGIES]
-    features: [
-      "Media-rich experience pages",
-      "Curated itinerary browsing",
-      "Responsive, mobile-first layout",
-    ],
-    github: "https://github.com/your-username/immerse-mongolia", // [PROJECT REPO]
+    github: "https://github.com/your-username/autonation",
   },
   {
     name: "Shield Nirun LLC Website",
     description:
-      "[PROJECT DESCRIPTION] A corporate website for a security services company, focused on clear service presentation and lead enquiries.",
+      "A responsive corporate website developed for Shield Nirun LLC to present its company information and security services with a clear and professional online presence.",
     image: shieldImg,
-    tech: ["Next.js", "Tailwind CSS"], // [TECHNOLOGIES]
+    tech: ["Next.js", "Tailwind CSS", "TypeScript", "Responsive Design"],
     features: [
-      "Company and services pages",
-      "Contact / enquiry form",
-      "SEO-friendly, fast-loading pages",
+      "Company information and service pages",
+      "Responsive design across devices",
+      "Contact and enquiry functionality",
+      "Structured content presentation",
     ],
-    github: "https://github.com/your-username/shield-nirun", // [PROJECT REPO]
+    github: "https://github.com/tuguldur0525/shield-nirun-web",
+    demo: "https://shield-nirun-web.vercel.app/",
   },
 ];
 
@@ -121,10 +158,11 @@ export const education = [
       "Data Structures & Algorithms",
       "Database Systems",
       "Web Development",
-      "Software Engineering",
-      "Computer Networks",
-      "Operating Systems",
-      "Computer Graphics",
+      "Graphics Designing & Adobe Suite",
+      "Artificial Intelligence",
+      "Game Development Using Unreal Engine and Unity",
+      "Computer Vision & OpenCV",
+      "Machine Learning Fundamentals",
     ],
   },
 ];
@@ -146,7 +184,7 @@ export const journey = [
     title: "Continuous Learning",
     period: "Ongoing",
     description:
-      "Deepening TypeScript, API design, databases and testing through documentation, small builds and code reading. [ADD INTERNSHIPS / HACKATHONS / OPEN SOURCE HERE]",
+      "Deepening TypeScript, API design, databases and testing through documentation, small builds and code reading.",
   },
   {
     title: "Open to Opportunities",
@@ -158,24 +196,28 @@ export const journey = [
 
 export const capabilities = [
   {
-    title: "Frontend Development",
-    description: "Building responsive, accessible and interactive web interfaces.",
+    title: "Web Development",
+    description:
+      "Build responsive web applications and websites using React, Next.js, JavaScript, and TypeScript.",
     icon: "Layout",
   },
   {
     title: "Full-Stack Development",
-    description: "Creating complete applications with frontend, backend, APIs and databases.",
+    description:
+      "Build complete features by working with REST APIs, databases, authentication, and backend services.",
     icon: "Layers",
   },
   {
-    title: "Problem Solving",
-    description: "Breaking complex problems into smaller, manageable solutions.",
-    icon: "Puzzle",
+    title: "Interactive & Multimedia",
+    description:
+      "Create interactive 360° virtual tours and immersive digital experiences using Three.js and multimedia technologies.",
+    icon: "Box",
   },
   {
-    title: "Continuous Learning",
-    description: "Quickly picking up new technologies and sharpening existing skills.",
-    icon: "GraduationCap",
+    title: "Graphic & UI Design",
+    description:
+      "Create clean visual designs, UI concepts, and digital content using Figma and Adobe Creative tools.",
+    icon: "Palette",
   },
 ];
 

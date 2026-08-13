@@ -19,7 +19,7 @@ export function About() {
               className="aspect-[4/5] w-full rounded-lg object-cover"
             />
             <p className="mt-3 font-mono text-xs text-muted-foreground">
-              [PROFILE PHOTO PLACEHOLDER]
+              [Tuguldur Turmunkh, 2025]
             </p>
           </div>
         </Reveal>
