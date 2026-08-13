@@ -3,7 +3,7 @@ import { Reveal, Section } from "./Section";
 
 export function Education() {
   return (
-    <Section id="education" label="05 / Education" title="Education">
+    <Section id="education" label="02 / Education" title="Education">
       <div className="space-y-8">
         {education.map((item, i) => (
           <Reveal key={item.degree} delay={i * 0.08}>
