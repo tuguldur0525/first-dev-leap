@@ -71,7 +71,7 @@
   --destructive-foreground: oklch(0.985 0.003 248);
   --border: oklch(0.9 0.008 255);
   --input: oklch(0.9 0.008 255);
-  --ring: oklch(0.68 0.16 62);
+  --ring: #dc7d00;
   --surface: oklch(0.97 0.005 250);
   --terminal: oklch(0.22 0.015 260);
   --terminal-foreground: oklch(0.93 0.01 250);
