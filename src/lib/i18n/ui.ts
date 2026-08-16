@@ -32,6 +32,11 @@ export const ui = {
     keyFeatures: "Key features",
     github: "GitHub",
     liveDemo: "Live Demo",
+    viewDetails: "View details",
+    projectOverview: "Overview",
+    techStack: "Tech stack",
+    allFeatures: "What it does",
+    gallery: "Gallery",
 
     journeyLabel: "06 / Journey",
     journeyTitle: "My journey",
@@ -110,6 +115,11 @@ export const ui = {
     keyFeatures: "Гол онцлогууд",
     github: "GitHub",
     liveDemo: "Демо үзэх",
+    viewDetails: "Дэлгэрэнгүй",
+    projectOverview: "Тойм",
+    techStack: "Технологи",
+    allFeatures: "Юу хийдэг вэ",
+    gallery: "Зургууд",
 
     journeyLabel: "06 / Замнал",
     journeyTitle: "Миний замнал",
