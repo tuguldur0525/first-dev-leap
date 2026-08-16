@@ -6,6 +6,7 @@ import autonationImg from "@/assets/project-autonation.jpg";
 import campus360Img from "@/assets/project-campus360.jpg";
 import immerseImg from "@/assets/project-immerse.jpg";
 import shieldImg from "@/assets/project-shield.jpg";
+import baazImg from "@/assets/project-baaz.jpg";
 import type { Language } from "@/contexts/LanguageContext";
 
 export type Project = {
@@ -139,6 +140,29 @@ const en: PortfolioContent = {
       github: "https://github.com/tuguldur0525/immersemongolia",
       demo: "https://immersemongolia.vercel.app/",
     },
+    {
+    name: "Baaz ERP",
+    description:
+      "A full-stack ERP system for Mongolian resort and camp management, covering room and reservation lifecycle, guest CRM, finance and billing, food service, and analytics — fully localized in Mongolian with role-based multi-organization access control.",
+    image: baazImg,
+    tech: ["React", "TypeScript", "Node.js", "Express", "tRPC", "Vite", "Tailwind CSS", "Drizzle ORM", "MySQL", "Vitest"],
+    features: [
+      "Room inventory, types, capacity and seasonal pricing management",
+      "Reservation lifecycle: create, modify, cancel, check-in, check-out, cleaning",
+      "Drag-and-drop room schedule calendar with booking timeline",
+      "Guest registration, history, notes and contact management",
+      "Invoices, discounts, payment methods and balance tracking",
+      "Food menu, orders and extra services integrated into guest bills",
+      "Revenue, occupancy and reservation reports with charts",
+      "Role-based access control (admin, manager, reception, accountant, kitchen)",
+      "Multi-organization data isolation at the server level",
+      "Fully localized Mongolian interface",
+    ],
+    github: "https://github.com/tuguldur0525/resortERP",
+    demo: "https://3000-ig52xf27oo3fil301m9kf-30b63c9a.us1.manus.computer/",
+  },
+
+
     {
       name: "SITE Campus 360 Virtual Tour",
       description:
@@ -291,6 +315,7 @@ const en: PortfolioContent = {
   ],
 };
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const mn: PortfolioContent = {
   profile: {
     ...sharedProfile,
