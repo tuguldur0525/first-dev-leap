@@ -11,6 +11,8 @@ import immerseImg2 from "@/assets/project-immerse-2.jpg";
 import shieldImg from "@/assets/project-shield.jpg";
 import baazImg from "@/assets/project-baaz.jpg";
 import baazImg2 from "@/assets/project-baaz-2.jpg";
+import tinyFinanceImg from "@/assets/project-tinyfinance.png";
+import tinyFinanceImg2 from "@/assets/project-tinyfinance.png";
 import type { Language } from "@/contexts/LanguageContext";
 
 export type Project = {
@@ -199,6 +201,32 @@ const en: PortfolioContent = {
       github: "https://github.com/your-username/autonation",
       
     },
+    {
+  name: "Tiny Finance",
+  description:
+    "A mobile personal-finance app that helps users record income and expenses, organize transactions by category, monitor spending patterns, and maintain a clear view of their financial position.",
+  image: tinyFinanceImg,
+  tech: [
+    "React Native",
+    "Expo",
+    "TypeScript",
+    "Expo Router",
+    "NativeWind",
+    "AsyncStorage",
+  ],
+  features: [
+    "Quick income and expense entry with dates, amounts, notes, and categories",
+    "Financial overview dashboard showing current balance, total income, total expenses, and cash flow",
+    "Transaction history with category-based organization and easy review",
+    "Spending categories for clearer day-to-day budget tracking",
+    "Monthly and period-based summaries to understand financial habits",
+    "Visual spending and income insights through clear, mobile-friendly charts",
+    "Local data persistence so financial records remain available between app sessions",
+    "Mobile-first interface with responsive layouts, dark-mode support, and touch-friendly controls",
+  ],
+  github: "https://github.com/tuguldur0525/tiny-finance",
+},
+
   ],
   education: [
     {
@@ -492,6 +520,32 @@ const mn: PortfolioContent = {
       github: "https://github.com/your-username/autonation",
       
     },
+
+    {
+  name: "Tiny Finance",
+  description:
+    "Орлого, зарлагаа бүртгэх, гүйлгээг ангилах, зарцуулалтын хэв маягаа хянах болон санхүүгийн ерөнхий байдлаа ойлгомжтойгоор хянах боломжийг олгодог хувийн санхүүгийн гар утасны аппликэйшн.",
+  image: tinyFinanceImg2,
+  tech: [
+    "React Native",
+    "Expo",
+    "TypeScript",
+    "Expo Router",
+    "NativeWind",
+    "AsyncStorage",
+  ],
+  features: [
+    "Огноо, дүн, тэмдэглэл болон ангилал бүхий орлого, зарлагыг хурдан бүртгэх",
+    "Одоогийн үлдэгдэл, нийт орлого, нийт зарлага болон мөнгөн урсгалыг харуулах санхүүгийн хяналтын самбар",
+    "Гүйлгээний түүхийг ангиллаар зохион байгуулж, хялбар хянах боломж",
+    "Өдөр тутмын төсөв болон зарцуулалтыг илүү ойлгомжтой хянах зориулсан зарлагын ангилал",
+    "Санхүүгийн дадал, зарцуулалтын хэв маягийг ойлгох сарын болон тодорхой хугацааны тайлан",
+    "Зарлага болон орлогын мэдээллийг ойлгомжтой, гар утсанд тохиромжтой графикаар дүрслэн харуулах",
+    "Өгөгдлийг төхөөрөмж дээр хадгалж, аппликэйшнийг дахин нээсэн ч санхүүгийн бүртгэлүүдийг хадгалах",
+    "Гар утсанд зориулсан responsive интерфэйс, dark mode болон touch-д тохиромжтой удирдлагууд",
+  ],
+  github: "https://github.com/tuguldur0525/tiny-finance",
+},
   ],
 
   education: [
