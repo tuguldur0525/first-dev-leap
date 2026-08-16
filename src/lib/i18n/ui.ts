@@ -95,7 +95,7 @@ export const ui = {
     scroll: "гүйлгэх",
 
     aboutLabel: "01 / Миний тухай",
-    aboutTitle: "Бүтээгдэхүүн гаргахад дуртай бага түвшний хөгжүүлэгч",
+    aboutTitle: "Санаагаа бодит бүтээгдэхүүн болгох дуртай Junior Developer",
 
     educationLabel: "02 / Боловсрол",
     educationTitle: "Боловсрол",
