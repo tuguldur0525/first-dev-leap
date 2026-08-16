@@ -5,6 +5,7 @@ import {
   Github,
   ChevronLeft,
   ChevronRight,
+  Maximize2,
 } from 'lucide-react';
 import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
 import { useRef, useState } from 'react';
@@ -12,6 +13,7 @@ import { useRef, useState } from 'react';
 import { usePortfolioContent } from '@/hooks/usePortfolioContent';
 import { Reveal, Section } from './Section';
 import { Project } from '@/data/portfolio';
+import { ProjectDialog } from './ProjectDialog';
 
 export function Projects() {
   const { data, t } = usePortfolioContent();
@@ -19,6 +21,7 @@ export function Projects() {
 
   const carouselRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [selected, setSelected] = useState<Project | null>(null);
 
   const updateActiveIndex = () => {
     if (!carouselRef.current) return;
@@ -196,6 +199,7 @@ export function Projects() {
               index={i}
               t={t}
               isActive={i === activeIndex}
+              onOpen={() => setSelected(project)}
             />
           ))}
 
@@ -236,6 +240,15 @@ export function Projects() {
           Drag to explore
         </motion.div>
       </div>
+
+      <ProjectDialog
+        project={selected}
+        t={t}
+        open={selected !== null}
+        onOpenChange={(open) => {
+          if (!open) setSelected(null);
+        }}
+      />
     </Section>
   );
 }
@@ -249,11 +262,13 @@ function ProjectCard({
   index,
   t,
   isActive,
+  onOpen,
 }: {
   project: Project;
   index: number;
   t: Record<string, string>;
   isActive: boolean;
+  onOpen: () => void;
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -329,9 +344,20 @@ function ProjectCard({
         }}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
+        onClick={onOpen}
+        role="button"
+        tabIndex={0}
+        aria-label={`${project.name} — ${t['viewDetails'] ?? 'View details'}`}
+        onKeyDown={(event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            onOpen();
+          }
+        }}
         className="
           group
           relative
+          cursor-pointer
           flex
           w-[82vw]
           max-w-[380px]
@@ -508,12 +534,40 @@ function ProjectCard({
           </div>
 
           {/* Buttons */}
-          <div className="mt-auto flex gap-2 pt-5">
+          <div className="mt-auto flex flex-wrap items-center gap-2 pt-5">
+            <motion.button
+              type="button"
+              onClick={(event) => {
+                event.stopPropagation();
+                onOpen();
+              }}
+              whileHover={{ y: -2, scale: 1.02 }}
+              whileTap={{ scale: 0.96 }}
+              className="
+                inline-flex
+                items-center
+                gap-1.5
+                rounded-md
+                border
+                border-primary/40
+                px-3
+                py-2
+                text-xs
+                font-medium
+                text-primary
+                transition-colors
+                hover:bg-primary/10
+              "
+            >
+              <Maximize2 className="h-3.5 w-3.5" />
+              {t['viewDetails'] ?? 'View details'}
+            </motion.button>
             {project.github ? (
               <motion.a
                 href={project.github}
                 target="_blank"
                 rel="noreferrer noopener"
+                onClick={(event) => event.stopPropagation()}
                 whileHover={{
                   y: -2,
                   scale: 1.02,
@@ -546,6 +600,7 @@ function ProjectCard({
                 href={project.demo}
                 target="_blank"
                 rel="noreferrer noopener"
+                onClick={(event) => event.stopPropagation()}
                 whileHover={{
                   y: -2,
                   scale: 1.02,
