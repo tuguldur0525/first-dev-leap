@@ -96,10 +96,10 @@ const en: PortfolioContent = {
       "While I don't have extensive professional experience yet, I'm eager to learn, gain real-world experience, and take on new challenges. I'm ready to work hard, learn from experienced developers, and continuously improve my skills as I grow into my first full-time developer role.",
     ],
   highlights: [
-  "Experience across programming, web development, graphic design, and multimedia production",
-  "Hands-on experience with Adobe tools, Figma, Unity, Unreal Engine, OpenCV, and 360° virtual tours",
-  "Able to combine technical and creative skills to build interactive and visual digital projects",
-  "Comfortable learning and working with different technologies depending on the needs of a project",
+  "Web Development — Building responsive web applications with React, Next.js, and TypeScript",
+  "Backend Development — Working with Node.js, REST APIs, MongoDB, SQL, and Supabase",
+  "Graphic Design — Creating digital content and visual designs using Adobe Creative Suite and Figma",
+  "Technology & Multimedia — Experience with Unity, Unreal Engine, OpenCV, Three.js, and 360° virtual tours",
 ],
   },
   skillGroups: [
@@ -139,9 +139,7 @@ const en: PortfolioContent = {
         "Interactive maps and location-based browsing",
         "360° virtual tour integration",
         "Reviews and ratings",
-        "Category-based discovery",
         "Bilingual interface (Mongolian / English)",
-        "Responsive mobile-friendly design",
       ],
       github: "https://github.com/tuguldur0525/immersemongolia",
       demo: "https://immersemongolia.vercel.app/",
@@ -155,7 +153,7 @@ const en: PortfolioContent = {
     tech: ["React", "TypeScript", "Node.js", "Express", "tRPC", "Vite", "Tailwind CSS", "Drizzle ORM", "MySQL", "Vitest"],
     features: [
       "Room inventory, types, capacity and seasonal pricing management",
-      "Reservation lifecycle: create, modify, cancel, check-in, check-out, cleaning",
+      "Reservation lifecycle: create, modify, cancel, check-in, check-out",
       "Drag-and-drop room schedule calendar with booking timeline",
       "Guest registration, history, notes and contact management",
       "Invoices, discounts, payment methods and balance tracking",
@@ -163,7 +161,6 @@ const en: PortfolioContent = {
       "Revenue, occupancy and reservation reports with charts",
       "Role-based access control (admin, manager, reception, accountant, kitchen)",
       "Multi-organization data isolation at the server level",
-      "Fully localized Mongolian interface",
     ],
     github: "https://github.com/tuguldur0525/resortERP",
     demo: "https://3000-ig52xf27oo3fil301m9kf-30b63c9a.us1.manus.computer/",
@@ -195,27 +192,12 @@ const en: PortfolioContent = {
       tech: ["Next.js", "React", "MongoDB", "REST API", "Tailwind CSS", "TypeScript"],
       features: [
         "Dynamic vehicle listing and detail pages",
-        "Search and filtering by vehicle attributes",
         "Location-based filtering",
         "User accounts and listing submission",
         "Admin listing approval workflow",
-        "Responsive interface",
       ],
       github: "https://github.com/your-username/autonation",
       
-    },
-    {
-      name: "Shield Nirun LLC Website",
-      description:
-        "A responsive corporate website developed for Shield Nirun LLC to present its company information and security services with a clear and professional online presence.",
-      image: shieldImg,
-      tech: ["Adobe Suite", "Next.js", "Tailwind CSS", "TypeScript", "Responsive Design"],
-      features: [
-        "Company information and service pages",
-        "Graphic content and visual design using Adobe Suite",
-      ],
-      github: "https://github.com/tuguldur0525/shield-nirun-web",
-      demo: "https://shield-nirun-web.vercel.app/",
     },
   ],
   education: [
@@ -227,7 +209,6 @@ const en: PortfolioContent = {
         "Focused on software development, web technologies and interactive media, combining programming fundamentals with design-oriented coursework.",
       coursework: [
         "Data Structures & Algorithms",
-        "Database Systems",
         "Web Development",
         "Graphics Designing & Adobe Suite",
         "Artificial Intelligence",
@@ -301,7 +282,7 @@ const en: PortfolioContent = {
   experience: [
     {
       role: "Graphic Designer & Web Developer",
-      company: "Shield Nirun LLC",
+      company: "Shield Nirun - Ulaanbaatar, Mongolia",
       period: "[2025/12] – [2026/03]",
       description:
         "Developed a responsive corporate website for a security services company, focusing on clear content presentation, usability, and multi-device compatibility.",
@@ -311,16 +292,18 @@ const en: PortfolioContent = {
       ],
     },
     {
-      role: "Photo grapher & Customer Service Representative",
-      company: "Hollywood Pictures LLC",
-      period: "[2025/05] – [2025/09]",
-      description:
-        "Worked in a fast-paced customer-facing environment, building strong communication, teamwork, and time-management skills that transfer directly into collaborative development work.",
-      achievements: [
-        "Worked in a fast-paced customer-facing environment while maintaining consistent service standards.",
-        "Strengthened teamwork, communication, time-management, and problem-solving skills.",
-      ],
-    },
+  role: "Photographer & Customer Service Representative",
+  company: "Hollywood Pictures LLC - South Carolina, USA",
+  period: "[2025/05] – [2025/09]",
+  description:
+    "Responsible for photography, image editing, and customer service, delivering quality services tailored to customer needs.",
+  achievements: [
+    "Captured, professionally edited, and prepared final photographs based on customer orders.",
+    "Communicated directly with customers throughout the photography and service process, effectively managing orders and requests.",
+    "Handled customer payments and supported daily sales operations.",
+    "Coordinated photography, image editing, printing, and sales processes to provide efficient customer service.",
+  ],
+},
   ],
 };
 
@@ -331,7 +314,7 @@ const mn: PortfolioContent = {
     role: "Программ хөгжүүлэгч",
     location: "Сүхбаатар дүүрэг, Улаанбаатар хот, Монгол улс",
     tagline:
-      "Би Монгол Улсын Их Сургуулийг Мультимедиа технологийн чиглэлээр саяхан төгссөн. Хэрэглэгчдэд хэрэгтэй, найдвартай, ашиглахад хялбар программ хангамж бүтээх сонирхолтой.",
+      "Би Монгол Улсын Их Сургуулийг Мультимедиа технологи мэргэжлээр төгссөн. Хэрэглэгчдэд хэрэгтэй, найдвартай, ашиглахад хялбар программ хангамж бүтээхийг зорьдог.",
     intro:
       "Шинэ санааг бодит бүтээгдэхүүн, хэрэглээ болгох, мөн хөгжүүлэлтийн ур чадвараа тасралтгүй сайжруулах дуртай.",
   },
@@ -349,16 +332,16 @@ const mn: PortfolioContent = {
 
   about: {
     paragraphs: [
-      "Би Монгол Улсын Их Сургуулийг Мультимедиа технологийн чиглэлээр саяхан төгссөн. Суралцах хугацаандаа программчлал, алгоритм, өгөгдлийн сан болон вэб хөгжүүлэлтийн чиглэлээр суурь мэдлэг, практик туршлага хуримтлуулсан.",
+      "Би Монгол Улсын Их Сургуулийг Мультимедиа технологи мэргэжлээр төгссөн. Суралцах хугацаандаа программчлал, алгоритм, өгөгдлийн сан болон вэб хөгжүүлэлтийн чиглэлээр суурь мэдлэг, практик туршлага хуримтлуулсан.",
       "Программчлал болон вэб хөгжүүлэлтээс гадна Adobe Suite, Unreal Engine, Unity, OpenCV, компьютерийн хараа, зураг боловсруулалт болон машин сургалтын чиглэлээр ажиллаж үзсэн. Бие даан болон багаар ажиллахад дасан зохицож чаддаг бөгөөд туршлагатай хөгжүүлэгчидтэй хамтран ажиллаж, бодит төсөл дээр суралцан хөгжих боломжийг хайж байна.",
-      "Мэргэжлийн ажлын туршлагаа дөнгөж эхлүүлж байгаа ч шинэ зүйл хурдан суралцаж, мэдэхгүй зүйлээ судалж, асуудлыг шийдэх замаар өөрийгөө хөгжүүлэхийг хичээдэг. Анхны бүтэн цагийн ажлаараа бодит бүтээгдэхүүн дээр ажиллаж, багт өөрийн хувь нэмрээ оруулахын зэрэгцээ илүү туршлагатай хөгжүүлэгчдээс суралцах хүсэлтэй байна.",
+      "Мэргэжлийн ажлын туршлагаа дөнгөж эхлүүлж байгаа ч шинэ зүйл хурдан суралцаж, мэдэхгүй зүйлээ судалж, асуудлыг шийдэх замаар өөрийгөө хөгжүүлэхийг хичээдэг. Бодит бүтээгдэхүүн дээр ажиллаж, багт өөрийн хувь нэмрээ оруулахын зэрэгцээ илүү туршлагатай хөгжүүлэгчдээс суралцах хүсэлтэй байна.",
     ],
 
-    highlights: [
-  "Программчлал, вэб хөгжүүлэлт, график дизайн болон мультимедиа чиглэлээр практик туршлагатай",
-  "Adobe Suite, Figma, Unity, Unreal Engine, OpenCV болон 360° виртуал аялалын технологиуд дээр ажиллаж байсан",
-  "Техникийн болон бүтээлч ур чадвараа хослуулан интерактив, харааны шийдэл бүхий дижитал төсөл боловсруулах чадвартай",
-  "Төслийн шаардлагаас хамааран өөр өөр технологи, хэрэгслийг хурдан сурч, ажиллах чадвартай",
+  highlights: [
+  "Вэб хөгжүүлэлт — React, Next.js, TypeScript ашиглан интерактив, responsive веб хөгжүүлэх",
+  "Backend хөгжүүлэлт — Node.js, REST API, MongoDB, SQL болон Supabase-тэй ажиллах",
+  "График дизайн — Adobe Creative Suite болон Figma ашиглан дижитал контент, визуал дизайн боловсруулах",
+  "Технологи ба мультимедиа — Unity, Unreal Engine, OpenCV, Three.js болон 360° виртуал аяллын технологиудийн мэдлэгтэй",
 ],
   },
 
@@ -414,7 +397,7 @@ const mn: PortfolioContent = {
     {
       name: "Immerse Mongolia",
       description:
-        "Монголын бизнес, аялал жуулчлалын газруудыг нэг дороос хайж олох, газрын зураг дээр үзэх, үнэлгээ болон сэтгэгдэлтэй танилцах, мөн 360° виртуал орчноор аялах боломжийг олгох зорилготой full-stack вэб платформын концепц.",
+        "Үйлчилгээний газар, аялал жуулчлалын газруудыг нэг дороос хайж олох, газрын зураг дээр үзэх, үнэлгээ болон сэтгэгдэлтэй танилцах, мөн 360° виртуалаар үзэх боломжийг олгох зорилготой full-stack вэб платформын концепц.",
       image: immerseImg,
       gallery: [immerseImg, immerseImg2],
       tech: [
@@ -431,13 +414,43 @@ const mn: PortfolioContent = {
         "Интерактив газрын зураг болон байршлаар хайх боломж",
         "360° виртуал аяллын интеграц",
         "Үнэлгээ болон сэтгэгдлийн систем",
-        "Ангиллаар хайх боломж",
         "Монгол / Англи хэлний интерфейс",
-        "Гар утас болон бусад төхөөрөмжид тохирсон дизайн",
       ],
       github: "https://github.com/tuguldur0525/immersemongolia",
       demo: "https://immersemongolia.vercel.app/",
     },
+
+    {
+  name: "Baaz ERP",
+  description:
+    "Монголын амралтын газар, жуулчны баазын үйл ажиллагааг удирдах зориулалттай full-stack ERP систем. Өрөө болон захиалгын удирдлага, зочдын CRM, санхүү тооцоо, хоол үйлчилгээ, тайлан шинжилгээ зэрэг үйл ажиллагааг нэг системд нэгтгэсэн, байгууллага болон хэрэглэгчийн эрхийн түвшинд суурилсан хандалтын удирдлагатай.",
+  image: baazImg,
+  tech: [
+    "React",
+    "TypeScript",
+    "Node.js",
+    "Express",
+    "tRPC",
+    "Vite",
+    "Tailwind CSS",
+    "Drizzle ORM",
+    "MySQL",
+    "Vitest",
+  ],
+  features: [
+    "Өрөөний бүртгэл, төрөл, багтаамж болон улирлын үнийн удирдлага",
+    "Захиалга — үүсгэх, өөрчлөх, цуцлах, бүртгэх, гаргах",
+    "Захиалгын хуваарийг timeline хэлбэрээр харуулах drag-and-drop календарь",
+    "Зочдын бүртгэл, түүх, тэмдэглэл болон холбоо барих мэдээллийн удирдлага",
+    "Нэхэмжлэх, хөнгөлөлт, төлбөрийн төрөл болон үлдэгдлийн тооцоо",
+    "Хоолны цэс, захиалга болон нэмэлт үйлчилгээг зочдын тооцоотой нэгтгэх",
+    "Орлого, өрөөний дүүргэлт болон захиалгын график бүхий тайлангууд",
+    "Эрхийн түвшинд суурилсан хандалтын удирдлага — админ, менежер, ресепшн, нягтлан, гал тогоо",
+    "Серверийн түвшинд байгууллага хоорондын өгөгдлийг тусгаарлан хамгаалах",
+  ],
+  github: "https://github.com/tuguldur0525/resortERP",
+  demo: "https://3000-ig52xf27oo3fil301m9kf-30b63c9a.us1.manus.computer/",
+},
 
     {
       name: "SITE Campus 360 Virtual Tour",
@@ -455,11 +468,8 @@ const mn: PortfolioContent = {
       features: [
         "Интерактив 360° панорама үзэх боломж",
         "Олон давхар барилгын навигаци",
-        "Нэг орчноос нөгөөд шилжих боломж",
-        "Интерактив навигацийн тэмдэглэгээ",
-        "Кампус, байр болон өрөөнүүдийн зохион байгуулалттай бүтэц",
-        "Desktop болон mobile төхөөрөмжид тохирсон интерфейс",
-        "360° зураг болон контентыг вэбэд ашиглахад оновчилсон",
+        "Three.js Photo Sphere Viewer интеграц",
+        "Оptimized 360° зураг шахалт, вэб-д тохирсон",
       ],
       github: "https://github.com/tuguldur0525/mtes-tour",
       demo: "https://mtes-tour.vercel.app/",
@@ -474,35 +484,13 @@ const mn: PortfolioContent = {
       tech: ["Next.js", "React", "MongoDB", "REST API", "Tailwind CSS", "TypeScript"],
       features: [
         "Автомашины зарын жагсаалт болон дэлгэрэнгүй хуудас",
-        "Машины үзүүлэлтээр хайх болон шүүх",
+    
         "Байршлаар хайх болон шүүх",
         "Хэрэглэгчийн бүртгэл болон зар нэмэх боломж",
         "Админ зар шалгаж, баталгаажуулах систем",
-        "Бүх төхөөрөмжид тохирсон интерфейс",
       ],
       github: "https://github.com/your-username/autonation",
       
-    },
-
-    {
-      name: "Shield Nirun LLC Website",
-      description:
-        "Shield Nirun ХХК-ийн үйл ажиллагаа болон аюулгүй байдлын үйлчилгээг танилцуулах зорилгоор хөгжүүлсэн responsive корпоратив вэбсайт. Компанийн мэдээллийг ойлгомжтой, мэргэжлийн байдлаар хүргэхэд анхаарч ажилласан.",
-      image: shieldImg,
-      tech: [
-        "Next.js",
-        "Tailwind CSS",
-        "TypeScript",
-        "Responsive Design",
-      ],
-      features: [
-        "Компанийн мэдээлэл болон үйлчилгээний хуудсууд",
-        "Desktop, tablet болон mobile төхөөрөмжид тохирсон дизайн",
-        "Холбоо барих болон хүсэлт илгээх боломж",
-        "Агуулгыг ойлгомжтой, эмх цэгцтэй байдлаар танилцуулах бүтэц",
-      ],
-      github: "https://github.com/tuguldur0525/shield-nirun-web",
-      demo: "https://shield-nirun-web.vercel.app/",
     },
   ],
 
@@ -515,7 +503,6 @@ const mn: PortfolioContent = {
         "Программ хангамжийн хөгжүүлэлт, вэб технологи болон интерактив медиад түлхүү анхаарч суралцсан. Программчлалын суурь мэдлэгийг дизайн болон мультимедиатай хослуулан эзэмшсэн.",
       coursework: [
         "Өгөгдлийн бүтэц ба алгоритм",
-        "Өгөгдлийн сангийн систем",
         "Вэб хөгжүүлэлт",
         "График дизайн ба Adobe Suite",
         "Хиймэл оюун ухаан",
@@ -528,7 +515,7 @@ const mn: PortfolioContent = {
 
   journey: [
     {
-      title: "Их сургуулийн суурь",
+      title: "Их сургуулийлд суурь мэдлэгээ эзэмшсэн",
       period: "2022 — 2026",
       description:
         "Монгол Улсын Их Сургуульд Мультимедиа технологийн чиглэлээр суралцаж, программчлал, алгоритм, өгөгдлийн сан, компьютерийн график болон мультимедиагийн суурь мэдлэг эзэмшсэн.",
@@ -593,32 +580,30 @@ const mn: PortfolioContent = {
   experience: [
     {
       role: "График дизайнер & Вэб хөгжүүлэгч",
-      company: "Shield Nirun LLC",
+      company: "Shield Nirun - Улаанбаатар, Монгол улс",
       period: "[2025/12] – [2026/03]",
       description:
-        "Аюулгүй байдлын үйлчилгээ үзүүлдэг компанийн корпоратив вэбсайтыг хөгжүүлсэн. Вэбсайтын мэдээллийг ойлгомжтой хүргэх, хэрэглэгч ашиглахад хялбар байх болон бүх төрлийн төхөөрөмжид зөв харагдахад анхаарч ажилласан.",
+        "Аюулгүй байдлын үйлчилгээ үзүүлдэг компаний танилцуулгавэбсайтыг хөгжүүлсэн. Вэбсайтын мэдээллийг ойлгомжтой хүргэх, хэрэглэгч ашиглахад хялбар байх болон бүх төрлийн төхөөрөмжид зөв харагдахад анхаарч ажилласан.",
       achievements: [
-        "Next.js, React болон Tailwind CSS ашиглан responsive корпоратив вэбсайт хөгжүүлсэн.",
         "Компанийн танилцуулга болон үйлчилгээний хуудсуудыг ойлгомжтой бүтэцтэйгээр боловсруулсан.",
-        "Desktop, tablet болон mobile төхөөрөмжүүдэд тохирсон responsive layout хөгжүүлсэн.",
         "Холбоо барих болон хүсэлт илгээх боломжийг хэрэгжүүлж, вэбсайтын агуулгыг хэрэглэгчид хялбар олохоор зохион байгуулсан.",
         "Вэбсайтын хайлтын системд харагдах байдал болон гүйцэтгэлийг сайжруулах үндсэн SEO, performance практикуудыг хэрэгжүүлсэн.",
       ],
     },
 
-    {
-      role: "Гэрэл зурагчин & Харилцагчийн үйлчилгээний ажилтан",
-      company: "Hollywood Pictures LLC",
-      period: "[2025/05] – [2025/09]",
-      description:
-        "Харилцагчидтай өдөр тутам шууд ажилладаг, хурдацтай орчинд ажиллаж, харилцаа, багаар ажиллах, цагийн менежмент болон асуудал шийдвэрлэх чадвараа хөгжүүлсэн.",
-      achievements: [
-        "Харилцагчидтай шууд ажилладаг, хурдацтай орчинд тогтмол чанартай үйлчилгээ үзүүлсэн.",
-        "Янз бүрийн хүмүүстэй ойлгомжтой, үр дүнтэй харилцаж ажилласан.",
-        "Өдөр тутмын ажлын үүрэг хариуцлагаа бие даан зохион байгуулж, өөрчлөгдөж буй нөхцөлд хурдан дасан зохицсон.",
-        "Багаар ажиллах, харилцах, цагийн менежмент болон асуудал шийдвэрлэх чадвараа хөгжүүлсэн.",
-      ],
-    },
+  {
+  role: "Гэрэл зурагчин & Харилцагчийн үйлчилгээний ажилтан",
+  company: "Hollywood Pictures LLC - Өмнөд Каролина, АНУ",
+  period: "[2025/05] – [2025/09]",
+  description:
+    "Гэрэл зураг авалт, зураг боловсруулалт болон харилцагчийн үйлчилгээний үйл ажиллагааг хариуцан ажиллаж, үйлчлүүлэгчийн хэрэгцээнд нийцсэн чанартай үйлчилгээ үзүүлсэн.",
+  achievements: [
+  "Үйлчлүүлэгчдийн захиалгын дагуу гэрэл зураг авч, мэргэжлийн түвшинд засварлан эцсийн бүтээгдэхүүн бэлтгэсэн.",
+  "Зураг авалт болон үйлчилгээний явцад үйлчлүүлэгчидтэй шууд харилцаж, захиалгыг үр дүнтэй зохицуулсан.",
+  "Төлбөр тооцоо, борлуулалтын үйл ажиллагааг хариуцан ажилласан.",
+  "Зураг авалт, боловсруулалт, хэвлэл болон борлуулалтын процессыг уялдуулан ажилласан.",
+],
+},
   ],
 };
 

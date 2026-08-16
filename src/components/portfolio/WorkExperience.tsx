@@ -7,12 +7,7 @@ export function WorkExperience() {
   const { experience } = data;
 
   return (
-    <Section
-      id="experience"
-      label={t['experienceLabel'] ?? ''}
-      title={t['experienceTitle'] ?? ''}
-      intro={t['experienceIntro'] ?? ''}
-    >
+    <Section id="experience" label={t['experienceLabel'] ?? ''} title={t['experienceTitle'] ?? ''}>
       <div className="space-y-8">
         {experience.map((job, i) => (
           <Reveal key={job.company} delay={i * 0.08}>

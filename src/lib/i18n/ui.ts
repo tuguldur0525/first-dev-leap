@@ -85,8 +85,8 @@ export const ui = {
     switchToEnglish: "Switch to English",
   } as const,
   mn: {
-    availableForRoles: "Бага түвшний ажилд бэлэн",
-    greetingPrefix: "Сайн байна уу, намайг",
+    availableForRoles: "Junior түвшний ажлын байранд нээлттэй ",
+    greetingPrefix: "Сайн уу, би бол",
     viewProjects: "Миний төслүүдийг үзэх",
     downloadResume: "Resume татах",
     contactMe: "Надтай холбогдох",
