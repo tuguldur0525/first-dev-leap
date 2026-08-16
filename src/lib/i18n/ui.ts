@@ -63,7 +63,7 @@ export const ui = {
     contactLabel: "09 / Contact",
     contactTitle: "Let's build something together",
     contactIntro:
-      "I'm currently looking for junior developer opportunities, internships and projects where I can contribute, learn and grow.",
+  "I am open to junior developer opportunities where I can contribute to meaningful projects, expand my technical skills, and grow as a developer.",
     linkedin: "LinkedIn",
 
     formName: "Name",
@@ -146,7 +146,7 @@ export const ui = {
     contactLabel: "09 / Холбоо барих",
     contactTitle: "Хамтран ажиллахад бэлэн байна.",
     contactIntro:
-      "Би одоогоор хувь нэмрээ оруулж, суралцаж, хөгжих боломжтой бага түвшний хөгжүүлэгчийн ажил, дадлага, төслүүдийг хайж байна.",
+  "Бодит төсөлд хувь нэмрээ оруулж, техник технологийн ур чадвараа хөгжүүлэн, мэргэжлийн хувьд өсөж дэвших Junior Developer-ийн боломжуудыг хайж байна.",
     linkedin: "LinkedIn",
 
     formName: "Нэр",
