@@ -3,16 +3,21 @@
  * Edit `content.en` / `content.mn` below to update site copy — no JSX changes needed.
  */
 import autonationImg from "@/assets/project-autonation.jpg";
+import autonationImg2 from "@/assets/project-autonation-2.jpg";
 import campus360Img from "@/assets/project-campus360.jpg";
+import campus360Img2 from "@/assets/project-campus360-2.jpg";
 import immerseImg from "@/assets/project-immerse.jpg";
+import immerseImg2 from "@/assets/project-immerse-2.jpg";
 import shieldImg from "@/assets/project-shield.jpg";
 import baazImg from "@/assets/project-baaz.jpg";
+import baazImg2 from "@/assets/project-baaz-2.jpg";
 import type { Language } from "@/contexts/LanguageContext";
 
 export type Project = {
   name: string;
   description: string;
   image: string;
+  gallery?: string[];
   tech: string[];
   features: string[];
   github?: string;
