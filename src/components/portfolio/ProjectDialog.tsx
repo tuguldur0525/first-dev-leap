@@ -1,8 +1,7 @@
 'use client';
 
-import { ExternalLink, Github } from 'lucide-react';
-import { motion } from 'motion/react';
-import { useEffect, useState } from 'react';
+import { ChevronLeft, ChevronRight, ExternalLink, Github } from 'lucide-react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import {
   Dialog,
@@ -30,58 +29,96 @@ export function ProjectDialog({
       : [project.image]
     : [];
 
+  const trackRef = useRef<HTMLDivElement>(null);
   const [activeImage, setActiveImage] = useState(0);
 
   useEffect(() => {
     setActiveImage(0);
+    trackRef.current?.scrollTo({ left: 0 });
   }, [project?.name]);
+
+  const scrollTo = useCallback((index: number) => {
+    const track = trackRef.current;
+    if (!track) return;
+    track.scrollTo({ left: index * track.clientWidth, behavior: 'smooth' });
+    setActiveImage(index);
+  }, []);
+
+  const onScroll = () => {
+    const track = trackRef.current;
+    if (!track || !track.clientWidth) return;
+    setActiveImage(Math.round(track.scrollLeft / track.clientWidth));
+  };
 
   if (!project) return null;
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-h-[90vh] gap-0 overflow-y-auto p-0 sm:max-w-3xl">
-        {/* Gallery */}
-        <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-border bg-muted">
-          <motion.img
-            key={images[activeImage]}
-            initial={{ opacity: 0, scale: 1.02 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.35 }}
-            src={images[activeImage]}
-            alt={`${project.name} screenshot ${activeImage + 1}`}
-            width={1200}
-            height={800}
-            className="h-full w-full object-cover"
-          />
-        </div>
-
-        {images.length > 1 ? (
-          <div className="flex gap-2 border-b border-border p-3">
+      <DialogContent className="max-h-[88vh] gap-0 overflow-y-auto p-0 sm:max-w-2xl">
+        {/* Swipeable gallery */}
+        <div className="relative border-b border-border bg-muted/40">
+          <div
+            ref={trackRef}
+            onScroll={onScroll}
+            className="flex snap-x snap-mandatory overflow-x-auto overscroll-x-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
             {images.map((src, i) => (
-              <button
+              <div
                 key={src}
-                type="button"
-                onClick={() => setActiveImage(i)}
-                aria-label={`${t['gallery'] ?? 'Gallery'} ${i + 1}`}
-                className={`h-14 w-24 shrink-0 overflow-hidden rounded-md border transition-colors ${
-                  i === activeImage
-                    ? 'border-primary'
-                    : 'border-border opacity-60 hover:opacity-100'
-                }`}
+                className="aspect-[16/9] max-h-[42vh] w-full shrink-0 snap-center"
               >
                 <img
                   src={src}
-                  alt=""
-                  loading="lazy"
+                  alt={`${project.name} screenshot ${i + 1}`}
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                  draggable={false}
                   className="h-full w-full object-cover"
                 />
-              </button>
+              </div>
             ))}
           </div>
-        ) : null}
 
-        <div className="space-y-6 p-6">
+          {images.length > 1 ? (
+            <>
+              <button
+                type="button"
+                onClick={() => scrollTo(Math.max(activeImage - 1, 0))}
+                disabled={activeImage === 0}
+                aria-label="Previous image"
+                className="absolute left-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background/70 backdrop-blur transition-opacity hover:text-primary disabled:opacity-0"
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </button>
+              <button
+                type="button"
+                onClick={() =>
+                  scrollTo(Math.min(activeImage + 1, images.length - 1))
+                }
+                disabled={activeImage === images.length - 1}
+                aria-label="Next image"
+                className="absolute right-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background/70 backdrop-blur transition-opacity hover:text-primary disabled:opacity-0"
+              >
+                <ChevronRight className="h-4 w-4" />
+              </button>
+
+              <div className="absolute inset-x-0 bottom-3 flex justify-center gap-1.5">
+                {images.map((src, i) => (
+                  <button
+                    key={src}
+                    type="button"
+                    onClick={() => scrollTo(i)}
+                    aria-label={`${t['gallery'] ?? 'Gallery'} ${i + 1}`}
+                    className={`h-1.5 rounded-full bg-primary transition-all ${
+                      i === activeImage ? 'w-6 opacity-100' : 'w-1.5 opacity-40'
+                    }`}
+                  />
+                ))}
+              </div>
+            </>
+          ) : null}
+        </div>
+
+        <div className="space-y-5 p-6">
           <DialogHeader className="space-y-2 text-left">
             <DialogTitle className="text-xl">{project.name}</DialogTitle>
             <DialogDescription className="text-sm leading-relaxed">
