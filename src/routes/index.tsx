@@ -13,7 +13,7 @@ import { Resume } from '@/components/portfolio/Resume';
 import { Contact } from '@/components/portfolio/Contact';
 import { Footer } from '@/components/portfolio/Footer';
 import { content } from '@/data/portfolio';
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from '@vercel/analytics/react';
 
 const profile = content.en.profile;
 
