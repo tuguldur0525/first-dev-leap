@@ -6,8 +6,10 @@ import autonationImg from "@/assets/project-autonation.jpg";
 import autonationImg2 from "@/assets/project-autonation-2.jpg";
 import campus360Img from "@/assets/project-campus360.jpg";
 import campus360Img2 from "@/assets/project-campus360-2.jpg";
+import campus360Img3 from "@/assets/project-campus360-3.jpg";
 import immerseImg from "@/assets/project-immerse.jpg";
 import immerseImg2 from "@/assets/project-immerse-2.jpg";
+import immerseImg3 from "@/assets/project-immerse-3.jpg";
 import shieldImg from "@/assets/project-shield.jpg";
 import baazImg from "@/assets/project-baaz.jpg";
 import baazImg2 from "@/assets/project-baaz-2.jpg";
@@ -134,7 +136,7 @@ const en: PortfolioContent = {
       description:
         "A Full-stacked web platform concept for discovering and showcasing Mongolian businesses and destinations through interactive listings, maps, reviews, and immersive 360° experiences..",
       image: immerseImg,
-      gallery: [immerseImg, immerseImg2],
+      gallery: [immerseImg, immerseImg2, immerseImg3],
       tech: ["Next.js", "TypeScript", "Node.js", "Tailwind CSS", "Supabase", "REST API", "Mapbox"],
       features: [
         "Business and destination listings",
@@ -174,7 +176,7 @@ const en: PortfolioContent = {
       description:
         "A web-based 360° virtual tour developed as a university diploma project for the School of Information Technology and Electronics, allowing users to explore campus buildings and indoor spaces interactively.",
       image: campus360Img,
-      gallery: [campus360Img, campus360Img2],
+      gallery: [campus360Img, campus360Img2, campus360Img3],
       tech: ["React", "Next.js", "Three.js", "Photo Sphere Viewer", "Tailwind CSS"],
       features: [
         "Interactive 360° panoramic using Insta360",
@@ -190,7 +192,7 @@ const en: PortfolioContent = {
       description:
         "An automotive marketplace web application that allows users to browse, search and filter vehicle listings, submit their own listings, and manage listings through an administrative approval workflow.",
       image: autonationImg,
-      gallery: [autonationImg, autonationImg2],
+      gallery: [autonationImg],
       tech: ["Next.js", "React", "MongoDB", "REST API", "Tailwind CSS", "TypeScript"],
       features: [
         "Dynamic vehicle listing and detail pages",
@@ -427,7 +429,7 @@ const mn: PortfolioContent = {
       description:
         "Үйлчилгээний газар, аялал жуулчлалын газруудыг нэг дороос хайж олох, газрын зураг дээр үзэх, үнэлгээ болон сэтгэгдэлтэй танилцах, мөн 360° виртуалаар үзэх боломжийг олгох зорилготой full-stack вэб платформын концепц.",
       image: immerseImg,
-      gallery: [immerseImg, immerseImg2],
+      gallery: [immerseImg, immerseImg2, immerseImg3],
       tech: [
         "Next.js",
         "TypeScript",
@@ -485,7 +487,7 @@ const mn: PortfolioContent = {
       description:
         "Мэдээллийн технологи, электроникийн сургуулийн дипломын ажлын хүрээнд хөгжүүлсэн вэбд суурилсан 360° виртуал аялал. Хэрэглэгчид сургуулийн байр, давхар болон дотоод орчныг интерактив байдлаар үзэж, нэг орчноос нөгөөд шилжих боломжтой.",
       image: campus360Img,
-      gallery: [campus360Img, campus360Img2],
+      gallery: [campus360Img, campus360Img2, campus360Img3],
       tech: [
         "React",
         "Next.js",
@@ -508,7 +510,7 @@ const mn: PortfolioContent = {
       description:
         "Хэрэглэгчид автомашины зар үзэх, хайх, шүүх, өөрийн машинаа зарлах боломжтой автомашины худалдааны вэб аппликейшн. Зар нэмэх болон админ баталгаажуулах үйл явцыг багтаасан.",
       image: autonationImg,
-      gallery: [autonationImg, autonationImg2],
+      gallery: [autonationImg],
       tech: ["Next.js", "React", "MongoDB", "REST API", "Tailwind CSS", "TypeScript"],
       features: [
         "Автомашины зарын жагсаалт болон дэлгэрэнгүй хуудас",

@@ -48,7 +48,7 @@ export function Navbar() {
       >
         <a href="#home" className="font-mono text-sm font-semibold tracking-tight">
           <span className="text-primary">&gt;</span> {profile.name.split(' ')[0]?.toLowerCase()}
-          <span className="text-muted-foreground">.dev</span>
+          <span className="text-muted-foreground">.site</span>
         </a>
 
         <ul className="hidden items-center gap-1 md:flex">
