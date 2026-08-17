@@ -1,4 +1,4 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import {
   Outlet,
   Link,
@@ -6,12 +6,13 @@ import {
   useRouter,
   HeadContent,
   Scripts,
-} from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+} from '@tanstack/react-router';
+import { useEffect, type ReactNode } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 
-import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
-import { LanguageProvider } from "../contexts/LanguageContext";
+import appCss from '../styles.css?url';
+import { reportLovableError } from '../lib/lovable-error-reporting';
+import { LanguageProvider } from '../contexts/LanguageContext';
 
 function NotFoundComponent() {
   return (
@@ -35,11 +36,11 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: { error: Error, reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    reportLovableError(error, { boundary: 'tanstack_root_error_component' });
   }, [error]);
 
   return (
@@ -76,31 +77,31 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Tuguldur Turmunkh — Junior Software Developer" },
+      { charSet: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { title: 'Tuguldur Turmunkh — Junior Software Developer' },
       {
-        name: "description",
+        name: 'description',
         content:
-          "Personal portfolio of a junior software developer building full-stack web applications.",
+          'Personal portfolio of a junior software developer building full-stack web applications.',
       },
-      { name: "author", content: "Tuguldur Turmunkh" },
-      { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Tuguldur Turmunkh" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { name: 'author', content: 'Tuguldur Turmunkh' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:site_name', content: 'Tuguldur Turmunkh' },
+      { name: 'twitter:card', content: 'summary_large_image' },
     ],
     links: [
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },
       {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap",
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap',
       },
       {
-        rel: "stylesheet",
+        rel: 'stylesheet',
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: 'icon', href: '/favicon.ico', type: 'image/x-icon' },
     ],
   }),
 
@@ -132,6 +133,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <body>
         {children}
         <Scripts />
+        <Analytics />
       </body>
     </html>
   );
