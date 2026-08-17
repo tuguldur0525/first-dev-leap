@@ -13,6 +13,7 @@ import { Resume } from '@/components/portfolio/Resume';
 import { Contact } from '@/components/portfolio/Contact';
 import { Footer } from '@/components/portfolio/Footer';
 import { content } from '@/data/portfolio';
+import { Analytics } from '@vercel/analytics/next';
 
 const profile = content.en.profile;
 
@@ -53,6 +54,7 @@ export const Route = createFileRoute('/')({
 function Index() {
   return (
     <div className="min-h-screen bg-background">
+      <Analytics />
       <Navbar />
       <main>
         <Hero />
